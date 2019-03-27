@@ -169,7 +169,7 @@ func parameterToString(obj interface{}, collectionFormat string) string {
 	return fmt.Sprintf("%v", obj)
 }
 
-// callAPI do the request. 
+// callAPI do the request.
 func (c *APIClient) callAPI(request *http.Request) (*http.Response, error) {
 	 return c.cfg.HTTPClient.Do(request)
 }
@@ -237,10 +237,10 @@ func (c *APIClient) prepareRequest (
 			if err != nil {
 				return nil, err
 			}
-			// Set the Boundary in the Content-Type
-			headerParams["Content-Type"] = w.FormDataContentType()
 		}
-		
+        // Set the Boundary in the Content-Type
+        headerParams["Content-Type"] = w.FormDataContentType()
+
 		// Set Content-Length
 		headerParams["Content-Length"] = fmt.Sprintf("%d", body.Len())
 		w.Close()
@@ -286,10 +286,10 @@ func (c *APIClient) prepareRequest (
 	if c.cfg.Host != "" {
 		localVarRequest.Host = c.cfg.Host
 	}
-	
+
 	// Add the user agent to the request.
 	localVarRequest.Header.Add("User-Agent", c.cfg.UserAgent)
-	
+
 
 	if ctx != nil {
 		// add context to the request
@@ -322,7 +322,7 @@ func (c *APIClient) prepareRequest (
 	for header, value := range c.cfg.DefaultHeader {
 		localVarRequest.Header.Add(header, value)
 	}
-	
+
 	return localVarRequest, nil
 }
 
@@ -382,7 +382,7 @@ func setBody(body interface{}, contentType string) (bodyBuf *bytes.Buffer, err e
 func detectContentType(body interface{}) string {
 	contentType := "text/plain; charset=utf-8"
 	kind := reflect.TypeOf(body).Kind()
-	
+
 	switch kind {
 	case reflect.Struct, reflect.Map, reflect.Ptr:
 		contentType = "application/json; charset=utf-8"
@@ -430,7 +430,7 @@ func CacheExpires(r *http.Response) (time.Time) {
 		return time.Now()
 	}
 	respCacheControl := parseCacheControl(r.Header)
-	
+
 	if maxAge, ok := respCacheControl["max-age"]; ok {
 		lifetime, err := time.ParseDuration(maxAge + "s")
 		if err != nil {
