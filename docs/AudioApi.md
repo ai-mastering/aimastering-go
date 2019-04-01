@@ -30,6 +30,7 @@ Optional parameters are passed through a map[string]interface{}.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file** | ***os.File**| The file to upload. | 
+ **name** | **string**| Audio name. If this is not specified, the name in file parameter is used. | 
 
 ### Return type
 

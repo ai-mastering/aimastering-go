@@ -103,6 +103,13 @@ paths:
         required: false
         type: "file"
         x-exportParamName: "File"
+      - name: "name"
+        in: "formData"
+        description: "Audio name. If this is not specified, the name in file parameter\
+          \ is used."
+        required: false
+        type: "string"
+        x-exportParamName: "Name"
       responses:
         201:
           description: "Success"
@@ -623,8 +630,8 @@ paths:
       - name: "oversample"
         in: "formData"
         required: false
-        type: "number"
-        default: 1.0
+        type: "integer"
+        default: 1
         x-exportParamName: "Oversample"
       - name: "sample_rate"
         in: "formData"
@@ -2059,7 +2066,7 @@ definitions:
       ceiling_mode:
         type: "string"
       oversample:
-        type: "number"
+        type: "integer"
       limiting_error:
         type: "number"
       video_title:
@@ -2112,7 +2119,7 @@ definitions:
       video_title: "video_title"
       user_id: 6
       output_video_id: 5
-      oversample: 1.173074250955943309548956676735542714595794677734375
+      oversample: 1
       expire_at: "2000-01-23T04:56:07.000+00:00"
       bit_depth: 9
       mastering_reverb: true

@@ -127,7 +127,7 @@ func (a *MasteringApiService) CancelMastering(ctx context.Context, id int32) (Ma
      @param "highCutFreq" (float32) This parameter represents the high cut freq of the output audio in Hz. This parameter is effective only when the mode is \&quot;custom\&quot;.
      @param "ceiling" (float32) 
      @param "ceilingMode" (string) 
-     @param "oversample" (float32) 
+     @param "oversample" (int32) 
      @param "sampleRate" (int32) This parameter represents the sample rate of the output audio in dB. This parameter is effective only when the mode is \&quot;custom\&quot;.
      @param "bitDepth" (int32) This parameter represents the bit depth of the output audio in dB. This parameter is effective only when the mode is \&quot;custom\&quot;.
      @param "outputFormat" (string) This parameter represents the format of the output audio. This parameter is effective only when the mode is \&quot;custom\&quot;.
@@ -203,7 +203,7 @@ func (a *MasteringApiService) CreateMastering(ctx context.Context, inputAudioId 
 	if err := typeCheckParameter(localVarOptionals["ceilingMode"], "string", "ceilingMode"); err != nil {
 		return successPayload, nil, err
 	}
-	if err := typeCheckParameter(localVarOptionals["oversample"], "float32", "oversample"); err != nil {
+	if err := typeCheckParameter(localVarOptionals["oversample"], "int32", "oversample"); err != nil {
 		return successPayload, nil, err
 	}
 	if err := typeCheckParameter(localVarOptionals["sampleRate"], "int32", "sampleRate"); err != nil {
@@ -296,7 +296,7 @@ func (a *MasteringApiService) CreateMastering(ctx context.Context, inputAudioId 
 	if localVarTempParam, localVarOk := localVarOptionals["ceilingMode"].(string); localVarOk {
 		localVarFormParams.Add("ceiling_mode", parameterToString(localVarTempParam, ""))
 	}
-	if localVarTempParam, localVarOk := localVarOptionals["oversample"].(float32); localVarOk {
+	if localVarTempParam, localVarOk := localVarOptionals["oversample"].(int32); localVarOk {
 		localVarFormParams.Add("oversample", parameterToString(localVarTempParam, ""))
 	}
 	if localVarTempParam, localVarOk := localVarOptionals["sampleRate"].(int32); localVarOk {

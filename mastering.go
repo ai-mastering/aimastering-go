@@ -76,7 +76,7 @@ type Mastering struct {
 
 	CeilingMode string `json:"ceiling_mode,omitempty"`
 
-	Oversample float32 `json:"oversample,omitempty"`
+	Oversample int32 `json:"oversample,omitempty"`
 
 	LimitingError float32 `json:"limiting_error,omitempty"`
 

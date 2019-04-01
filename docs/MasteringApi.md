@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
  **highCutFreq** | **float32**| This parameter represents the high cut freq of the output audio in Hz. This parameter is effective only when the mode is \&quot;custom\&quot;. | [default to 20000]
  **ceiling** | **float32**|  | [default to 0]
  **ceilingMode** | **string**|  | [default to 0]
- **oversample** | **float32**|  | [default to 1]
+ **oversample** | **int32**|  | [default to 1]
  **sampleRate** | **int32**| This parameter represents the sample rate of the output audio in dB. This parameter is effective only when the mode is \&quot;custom\&quot;. | [default to 44100]
  **bitDepth** | **int32**| This parameter represents the bit depth of the output audio in dB. This parameter is effective only when the mode is \&quot;custom\&quot;. | [default to 16]
  **outputFormat** | **string**| This parameter represents the format of the output audio. This parameter is effective only when the mode is \&quot;custom\&quot;. | [default to wav]

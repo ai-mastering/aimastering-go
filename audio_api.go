@@ -33,6 +33,7 @@ type AudioApiService service
  * @param ctx context.Context for authentication, logging, tracing, etc.
  @param optional (nil or map[string]interface{}) with one or more of:
      @param "file" (*os.File) The file to upload.
+     @param "name" (string) Audio name. If this is not specified, the name in file parameter is used.
  @return Audio*/
 func (a *AudioApiService) CreateAudio(ctx context.Context, localVarOptionals map[string]interface{}) (Audio,  *http.Response, error) {
 	var (
@@ -50,6 +51,9 @@ func (a *AudioApiService) CreateAudio(ctx context.Context, localVarOptionals map
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if err := typeCheckParameter(localVarOptionals["name"], "string", "name"); err != nil {
+		return successPayload, nil, err
+	}
 
 	// to determine the Content-Type header
 	localVarHttpContentTypes := []string{ "multipart/form-data",  }
@@ -79,6 +83,9 @@ func (a *AudioApiService) CreateAudio(ctx context.Context, localVarOptionals map
 		localVarFileBytes = fbs
 		localVarFileName = localVarFile.Name()
 		localVarFile.Close()
+	}
+	if localVarTempParam, localVarOk := localVarOptionals["name"].(string); localVarOk {
+		localVarFormParams.Add("name", parameterToString(localVarTempParam, ""))
 	}
 	if ctx != nil {
 		// API Key Authentication

@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **HighCutFreq** | **float32** |  | [optional] [default to null]
 **Ceiling** | **float32** |  | [optional] [default to null]
 **CeilingMode** | **string** |  | [optional] [default to null]
-**Oversample** | **float32** |  | [optional] [default to null]
+**Oversample** | **int32** |  | [optional] [default to null]
 **LimitingError** | **float32** |  | [optional] [default to null]
 **VideoTitle** | **string** |  | [optional] [default to null]
 **VideoStatus** | **string** |  | [optional] [default to null]
