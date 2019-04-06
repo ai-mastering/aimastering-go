@@ -1547,7 +1547,6 @@ definitions:
         - "unknown"
         - "expired"
         - "failed_to_prepare"
-        - "job_queue"
       target_loudness:
         type: "number"
       output_format:
@@ -2000,7 +1999,6 @@ definitions:
         - "unknown"
         - "expired"
         - "failed_to_prepare"
-        - "job_queue"
       target_loudness_mode:
         type: "string"
         enum:
