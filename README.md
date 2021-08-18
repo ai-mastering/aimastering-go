@@ -126,5 +126,5 @@ Example
 
 ## Author
 
-aimasteringcom@gmail.com
+info@bakuage.com
 

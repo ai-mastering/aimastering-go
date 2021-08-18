@@ -5,9 +5,9 @@ info:
     \ of [AI Mastering](https://aimastering.com) through this API."
   version: "1.0.0"
   title: "AI Mastering API"
-  termsOfService: "https://aimastering.com/en/terms_of_service/"
+  termsOfService: "https://aimastering.com/terms_of_service/"
   contact:
-    email: "aimasteringcom@gmail.com"
+    email: "info@bakuage.com"
   license:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
