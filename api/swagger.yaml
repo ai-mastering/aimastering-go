@@ -11,8 +11,8 @@ info:
   license:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "bakuage.com:443"
-basePath: "/api"
+host: "api.bakuage.com:443"
+basePath: ""
 tags:
 - name: "accessToken"
 - name: "amazonSubscription"
@@ -26,6 +26,7 @@ tags:
 - name: "payment"
 - name: "paymentCustomer"
 - name: "plan"
+- name: "spSubscription"
 - name: "statistics"
 - name: "subscription"
 - name: "user"
@@ -1085,6 +1086,56 @@ paths:
             type: "array"
             items:
               $ref: "#/definitions/Plan"
+        default:
+          description: "Error"
+  /sp_subscriptions:
+    get:
+      tags:
+      - "spSubscription"
+      summary: "Get all accessable smartphone subscriptions."
+      operationId: "listSpSubscriptions"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        200:
+          description: "Success"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/SpSubscription"
+        default:
+          description: "Error"
+    post:
+      tags:
+      - "spSubscription"
+      summary: "Create a new smartphone subscription."
+      operationId: "createSpSubscription"
+      consumes:
+      - "multipart/form-data"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "service"
+        in: "formData"
+        description: "Service."
+        required: true
+        type: "string"
+        enum:
+        - "appstore"
+        x-exportParamName: "Service"
+      - name: "receipt"
+        in: "formData"
+        description: "Base64 encoded app store receipt. This parameter is effective\
+          \ only when the service is \"appstore\"."
+        required: false
+        type: "string"
+        x-exportParamName: "Receipt"
+      responses:
+        201:
+          description: "Success"
+          schema:
+            $ref: "#/definitions/SpSubscription"
         default:
           description: "Error"
   /statistics/anonymized_masterings:
@@ -2196,6 +2247,30 @@ definitions:
       name: "name"
       currency: "jpy"
       interval: "month"
+  SpSubscription:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+      user_id:
+        type: "integer"
+      status:
+        type: "string"
+        enum:
+        - "active"
+        - "inactive"
+      created_at:
+        type: "string"
+        format: "date-time"
+      updated_at:
+        type: "string"
+        format: "date-time"
+    example:
+      updated_at: "2000-01-23T04:56:07.000+00:00"
+      user_id: 6
+      created_at: "2000-01-23T04:56:07.000+00:00"
+      id: 0
+      status: "active"
   Subscription:
     type: "object"
     properties:

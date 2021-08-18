@@ -17,7 +17,7 @@ Put the package under your project folder and add the following in import:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://bakuage.com:443/api*
+All URIs are relative to *https://api.bakuage.com:443*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -55,6 +55,8 @@ Class | Method | HTTP request | Description
 *PaymentApi* | [**ListPayments**](docs/PaymentApi.md#listpayments) | **Get** /payments | Get all accessable payments.
 *PaymentCustomerApi* | [**GetDefaultPaymentCustomer**](docs/PaymentCustomerApi.md#getdefaultpaymentcustomer) | **Get** /payment_customers/default | Get a default payment customer.
 *PlanApi* | [**ListPlans**](docs/PlanApi.md#listplans) | **Get** /plans | Get all accessable plans.
+*SpSubscriptionApi* | [**CreateSpSubscription**](docs/SpSubscriptionApi.md#createspsubscription) | **Post** /sp_subscriptions | Create a new smartphone subscription.
+*SpSubscriptionApi* | [**ListSpSubscriptions**](docs/SpSubscriptionApi.md#listspsubscriptions) | **Get** /sp_subscriptions | Get all accessable smartphone subscriptions.
 *StatisticsApi* | [**GetGroupBuyStatistics**](docs/StatisticsApi.md#getgroupbuystatistics) | **Get** /statistics/group_buy | Get group buy statistics.
 *StatisticsApi* | [**ListAnonymizedMasterings**](docs/StatisticsApi.md#listanonymizedmasterings) | **Get** /statistics/anonymized_masterings | Get anonymized masterings.
 *StatisticsApi* | [**ListKpis**](docs/StatisticsApi.md#listkpis) | **Get** /statistics/kpis | Get KPIs.
@@ -100,6 +102,7 @@ Class | Method | HTTP request | Description
  - [Payment](docs/Payment.md)
  - [PaymentCustomer](docs/PaymentCustomer.md)
  - [Plan](docs/Plan.md)
+ - [SpSubscription](docs/SpSubscription.md)
  - [Subscription](docs/Subscription.md)
  - [User](docs/User.md)
  - [UserStatistics](docs/UserStatistics.md)
